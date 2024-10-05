@@ -433,11 +433,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\diego\\source\\repos\\movierecords\\movierecords\\movierecords.csproj",
+      "projectUniqueName": "C:\\Users\\diego\\source\\repos\\movierecords\\movierecords\\backend\\movierecords.csproj",
       "projectName": "movierecords",
-      "projectPath": "C:\\Users\\diego\\source\\repos\\movierecords\\movierecords\\movierecords.csproj",
+      "projectPath": "C:\\Users\\diego\\source\\repos\\movierecords\\movierecords\\backend\\movierecords.csproj",
       "packagesPath": "C:\\Users\\diego\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\diego\\source\\repos\\movierecords\\movierecords\\obj\\",
+      "outputPath": "C:\\Users\\diego\\source\\repos\\movierecords\\movierecords\\backend\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\diego\\AppData\\Roaming\\NuGet\\NuGet.Config",
