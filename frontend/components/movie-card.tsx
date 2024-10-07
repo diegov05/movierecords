@@ -9,8 +9,8 @@ export default function MovieCard() {
     <Card
       isFooterBlurred
       as={Link}
-      className="border-none group h-96 lg:h-auto w-full lg:w-[70%] flex justify-end"
-      href={"/"}
+      className="border-none group h-full w-full flex justify-end"
+      href={"/movie"}
       radius="lg"
     >
       <div className="hidden group-hover:block absolute w-full h-full bg-black/5 z-30" />
@@ -22,6 +22,7 @@ export default function MovieCard() {
       />
       <CardFooter
         className="
+            absolute
             flex
             flex-row
             px-0
@@ -37,13 +38,12 @@ export default function MovieCard() {
             rounded-large 
             w-[calc(100%_-_8px)] 
             shadow-small 
-            ml-1 
-            z-10
+            ml-1
             "
       >
         <Button
           isIconOnly
-          className="top-6 left-4 md:left-8 absolute"
+          className="top-5 left-4 md:left-6 absolute"
           radius="full"
           size="sm"
         >
