@@ -8,8 +8,10 @@ import {
   DropdownItem,
 } from "@nextui-org/dropdown";
 import { Button, ButtonGroup } from "@nextui-org/button";
+import Link from "next/link";
 
 import { ChevronDownIcon, UserIcon } from "./icons";
+
 
 
 export default function UserDropdown() {
@@ -36,7 +38,7 @@ export default function UserDropdown() {
   return (
     <>
       <ButtonGroup isIconOnly className="flex sm:hidden" variant={variant}>
-        <Button startContent={<UserIcon className="size-5" />} />
+        <Button as={Link} href="/user" startContent={<UserIcon className="size-5" />} />
         <Dropdown placement="bottom-end">
           <DropdownTrigger>
             <Button isIconOnly>
@@ -50,10 +52,10 @@ export default function UserDropdown() {
             selectionMode="single"
             onSelectionChange={() => { }}
           >
-            <DropdownItem key="watchlist" description={descriptionsMap["watchlist"]}>
+            <DropdownItem key="watchlist" as={Link} description={descriptionsMap["watchlist"]} href="/user#watchlist">
               {labelsMap["watchlist"]}
             </DropdownItem>
-            <DropdownItem key="settings" description={descriptionsMap["settings"]}>
+            <DropdownItem key="settings" as={Link} description={descriptionsMap["settings"]} href="/user#settings">
               {labelsMap["settings"]}
             </DropdownItem>
             <DropdownItem key="logOut" className="text-danger" description={descriptionsMap["logOut"]}>
@@ -63,7 +65,7 @@ export default function UserDropdown() {
         </Dropdown>
       </ButtonGroup>
       <ButtonGroup className="hidden sm:flex" variant={variant}>
-        <Button startContent={<UserIcon className="size-5" />}>
+        <Button as={Link} href="/user" startContent={<UserIcon className="size-5" />}>
           <span>User</span>
         </Button>
         <Dropdown placement="bottom-end">
@@ -79,10 +81,10 @@ export default function UserDropdown() {
             selectionMode="single"
             onSelectionChange={() => { }}
           >
-            <DropdownItem key="watchlist" description={descriptionsMap["watchlist"]}>
+            <DropdownItem key="watchlist" as={Link} description={descriptionsMap["watchlist"]} href="/user#watchlist">
               {labelsMap["watchlist"]}
             </DropdownItem>
-            <DropdownItem key="settings" description={descriptionsMap["settings"]}>
+            <DropdownItem key="settings" as={Link} description={descriptionsMap["settings"]} href="/user#settings">
               {labelsMap["settings"]}
             </DropdownItem>
             <DropdownItem key="logOut" className="text-danger" description={descriptionsMap["logOut"]}>
