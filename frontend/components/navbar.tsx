@@ -1,3 +1,4 @@
+/* eslint-disable prettier/prettier */
 import {
   Navbar as NextUINavbar,
   NavbarContent,
@@ -14,13 +15,14 @@ import { Input } from "@nextui-org/input";
 import NextLink from "next/link";
 import Image from "next/image";
 import { Chip } from "@nextui-org/chip";
-
-import UserDropdown from "./user-dropdown";
+import { SignedIn, SignedOut, SignInButton, UserButton } from "@clerk/nextjs";
 
 import { ThemeSwitch } from "@/components/theme-switch";
 import { BookMarkIcon, SearchIcon } from "@/components/icons";
 
 export const Navbar = () => {
+
+
   const searchInput = (
     <Input
       aria-label="Search"
@@ -72,24 +74,32 @@ export const Navbar = () => {
         <NavbarItem className="flex gap-2">
           <ThemeSwitch />
         </NavbarItem>
-        <NavbarItem className="hidden md:flex">
-          <Button
-            isExternal
-            as={Link}
-            className="text-sm font-normal"
-            href={"/"}
-            startContent={<BookMarkIcon className="size-5" />}
-            variant="bordered"
-          >
-            Watchlist
-            <Chip color="primary" size="sm">
-              23
-            </Chip>
-          </Button>
-        </NavbarItem>
-        <NavbarItem className="flex">
-          <UserDropdown />
-        </NavbarItem>
+        <SignedIn>
+          <NavbarItem className="hidden md:flex">
+            <Button
+              as={Link}
+              className="text-sm font-normal"
+              href={"/watchlist"}
+              startContent={<BookMarkIcon className="size-5" />}
+              variant="bordered"
+            >
+              Watchlist
+              <Chip color="primary" size="sm">
+                23
+              </Chip>
+            </Button>
+          </NavbarItem>
+          <NavbarItem className="flex">
+            <UserButton />
+          </NavbarItem>
+        </SignedIn>
+        <SignedOut>
+          <SignInButton mode="modal">
+            <Button color="primary" size="sm" variant="solid">
+              Sign In
+            </Button>
+          </SignInButton>
+        </SignedOut>
       </NavbarContent>
     </NextUINavbar>
   );
