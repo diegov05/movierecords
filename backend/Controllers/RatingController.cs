@@ -63,5 +63,36 @@ namespace backend.Controllers
 
             return Ok(rating);
         }
+
+        [HttpDelete("UserRating/{ratingId}")]
+        public async Task<IActionResult> RemoveUserRating(int ratingId)
+        {
+            var rating = await _appDbContext.UserRatings.FindAsync(ratingId);
+            if (rating == null)
+            {
+                return NotFound("Rating not found.");
+            }
+
+            _appDbContext.UserRatings.Remove(rating);
+            await _appDbContext.SaveChangesAsync();
+
+            return Ok("Rating removed successfully.");
+        }
+
+        [HttpPut("UserRating/{ratingId}")]
+        public async Task<IActionResult> UpdateUserRating(int ratingId, [FromBody] UserRating updatedRating)
+        {
+            var existingRating = await _appDbContext.UserRatings.FindAsync(ratingId);
+            if (existingRating == null)
+            {
+                return NotFound("Rating not found.");
+            }
+
+            existingRating.Rating = updatedRating.Rating; // Update rating value
+            await _appDbContext.SaveChangesAsync();
+
+            return Ok("Rating updated successfully.");
+        }
+
     }
 }
