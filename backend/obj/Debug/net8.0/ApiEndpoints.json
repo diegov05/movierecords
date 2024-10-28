@@ -133,6 +133,43 @@
   },
   {
     "ContainingType": "backend.Controllers.RatingController",
+    "Method": "RemoveUserRating",
+    "RelativePath": "api/Rating/UserRating/{ratingId}",
+    "HttpMethod": "DELETE",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "ratingId",
+        "Type": "System.Int32",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "backend.Controllers.RatingController",
+    "Method": "UpdateUserRating",
+    "RelativePath": "api/Rating/UserRating/{ratingId}",
+    "HttpMethod": "PUT",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "ratingId",
+        "Type": "System.Int32",
+        "IsRequired": true
+      },
+      {
+        "Name": "updatedRating",
+        "Type": "backend.Models.UserRating",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "backend.Controllers.RatingController",
     "Method": "GetUserRatings",
     "RelativePath": "api/Rating/UserRatings",
     "HttpMethod": "GET",
